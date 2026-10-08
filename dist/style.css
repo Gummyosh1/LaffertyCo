@@ -99,3 +99,17 @@ footer{border-top:1px solid var(--line)}
 .services article,.calendar-details>p,.calendar-steps li,.about-details>p{transition:transform .3s ease}
 .services article:hover,.calendar-details>p:hover,.calendar-steps li:hover,.about-details>p:hover{transform:translateX(5px)}
 @media(hover:none),(prefers-reduced-motion:reduce){.services article:hover,.calendar-details>p:hover,.calendar-steps li:hover,.about-details>p:hover{transform:none}}
+
+/* Keep the decorative hero within narrow screens. */
+html,body{max-width:100%;overflow-x:clip}
+.hero-grid>*{min-width:0}
+.studio-playground{overflow:hidden;overflow:clip;width:100%}
+@media(max-width:450px){.studio-orbit{width:430px;transform:scale(.73);scale:none}.studio-playground{height:320px}nav{max-width:100%}.hero-actions{max-width:100%}.calendar-grid>div,.expertise-grid>div,.about-grid>div{min-width:0}footer{overflow-wrap:anywhere}}
+@media(max-width:350px){.studio-orbit{transform:scale(.62)}.hero h1{font-size:31px}.studio-playground{height:280px}}
+
+/* Center the fixed-size illustration independently of flex shrinking. */
+.studio-playground{position:relative;display:block}
+.studio-playground .studio-orbit{position:absolute;left:50%;top:50%;margin-left:-215px;margin-top:-185px;transform-origin:center;scale:none;transform:none}
+@media(max-width:1050px) and (min-width:801px){.studio-playground .studio-orbit{transform:scale(.82)}}
+@media(max-width:450px){.studio-playground .studio-orbit{transform:scale(.73)}}
+@media(max-width:350px){.studio-playground .studio-orbit{transform:scale(.62)}}
